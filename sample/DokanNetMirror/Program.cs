@@ -27,7 +27,7 @@ internal class Program
 #endif
 
             var arguments = args
-               .Select(x => x.Split(['='], 2, StringSplitOptions.RemoveEmptyEntries))
+               .Select(x => x.Split('=', 2, StringSplitOptions.RemoveEmptyEntries)) // ['='] 를 '=' 로 수정
                .ToDictionary(x => x[0], x => x.Length > 1 ? x[1] as object : true, StringComparer.OrdinalIgnoreCase);
 
             var mirrorPath = arguments.TryGetValue(MirrorKey, out var mirrorPathObj)

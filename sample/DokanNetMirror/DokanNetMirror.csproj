@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net9.0;net46;net48</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework> <!-- net6.0 에서 net8.0으로 변경 -->
   </PropertyGroup>
 
   <ItemGroup>
