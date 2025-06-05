@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType> <!-- 실행 파일로 변경 -->
+    <TargetFramework>net6.0</TargetFramework> <!-- .NET 6.0으로 변경 -->
+    <ImplicitUsings>disable</ImplicitUsings> <!-- 명시적 using을 선호하여 비활성화 -->
+    <Nullable>enable</Nullable> <!-- Nullable 참조 타입 활성화 -->
+    <!-- 애플리케이션 아이콘이나 다른 리소스 관련 설정을 여기에 추가할 수 있습니다 -->
+    <AssemblyName>VirtualJsonDriveApp</AssemblyName> <!-- 실행 파일 이름 변경 (선택 사항) -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- DokanNet 패키지 참조 -->
+    <PackageReference Include="DokanNet" Version="2.0.4.1" />
+    <!-- Newtonsoft.Json 패키지 참조 (FileSystemLoader에서 사용) -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!--
+    Dokan 라이브러리의 네이티브 DLL (dokan1.dll 또는 dokan2.dll)은
+    실행 파일과 동일한 디렉터리에 있거나 시스템 경로에 있어야 합니다.
+    DokanNet 패키지는 이러한 네이티브 DLL을 자동으로 복사하지 않을 수 있습니다.
+    프로젝트 빌드 시점에 네이티브 DLL을 출력 디렉터리로 복사하려면 다음을 사용할 수 있습니다.
+    (Dokan 설치 경로에 따라 경로 수정 필요)
+  -->
+  <!--
+  <ItemGroup>
+    <None Include="C:\Program Files\Dokan\Dokan Library-2.0.4\x64\dokan2.dll" Condition="Exists('C:\Program Files\Dokan\Dokan Library-2.0.4\x64\dokan2.dll')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>dokan2.dll</Link>
+    </None>
+    <None Include="C:\Program Files\Dokan\Dokan Library-2.0.4\x64\DokanFS.pdb" Condition="Exists('C:\Program Files\Dokan\Dokan Library-2.0.4\x64\DokanFS.pdb')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>DokanFS.pdb</Link>
+    </None>
+  </ItemGroup>
+  -->
+
+</Project>
